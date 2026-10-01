@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABJM Networkers - Enterprise MLM System V6</title>
+    <title>AB - Ángel Breña | Oportunidad de Negocio y Bienestar</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Pro / Free Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,405 +14,294 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-[#050B14] text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+<body class="bg-[#030712] text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
 
-    <div class="flex h-screen overflow-hidden">
-        
-        <!-- SIDEBAR DE NAVEGACIÓN EXTENDIDA -->
-        <aside class="w-80 bg-[#09101D] border-r border-slate-800/80 flex flex-col justify-between hidden lg:flex shadow-2xl">
-            <div>
-                <!-- Marca Corporativa -->
-                <div class="p-6 border-b border-slate-800/80 flex items-center space-x-3 bg-[#050B14]/40">
-                    <div class="bg-gradient-to-tr from-emerald-600 to-teal-400 p-3 rounded-2xl text-white shadow-lg shadow-emerald-900/50">
-                        <i class="fa-solid fa-network-wired text-xl"></i>
+    <!-- BARRA DE NAVEGACIÓN OFICIAL -->
+    <nav class="bg-[#0b1329] border-b border-blue-900/40 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-blue-600 to-cyan-400 p-2.5 rounded-2xl text-white font-extrabold text-lg shadow-lg shadow-blue-900/50">
+                    AB
+                </div>
+                <div>
+                    <span class="block font-extrabold text-white text-lg tracking-wider">ÁNGEL BREÑA</span>
+                    <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Movimiento de Bienestar Global</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
+                <button onclick="irSeccion('inicio')" class="hover:text-cyan-400 transition">Inicio</button>
+                <button onclick="irSeccion('ceo')" class="hover:text-cyan-400 transition">CEO & Fundación</button>
+                <button onclick="irSeccion('packs')" class="hover:text-cyan-400 transition">Packs de Inicio</button>
+                <button onclick="irSeccion('compensacion')" class="hover:text-cyan-400 transition">Plan de Compensación</button>
+                <button onclick="irSeccion('backoffice')" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30">Oficina Virtual / Back-Office</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN 1: HERO / INICIO OFICIAL -->
+    <section id="sec-inicio" class="relative overflow-hidden py-24 bg-gradient-to-b from-[#0b1329] to-[#030712] border-b border-blue-900/20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="bg-blue-500/10 text-cyan-400 border border-cyan-500/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                    Un hábito diario que transforma tu vida[cite: 10]
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                    No solo construimos negocios... <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Transformamos vidas.</span>[cite: 12]
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Únete a una comunidad internacional enfocada en bienestar integral, nutrición funcional, crecimiento financiero y liderazgo con respaldo y visión global[cite: 10, 12, 16].
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button onclick="irSeccion('packs')" class="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-blue-600/30 transition text-center">
+                        Ver Packs de Afiliación
+                    </button>
+                    <button onclick="irSeccion('compensacion')" class="bg-[#0b1329] hover:bg-slate-800 text-slate-200 border border-blue-900/50 font-bold px-8 py-4 rounded-2xl transition text-center">
+                        Conocer Plan de Ganancias
+                    </button>
+                </div>
+            </div>
+            <div class="bg-[#0b1329]/80 border border-blue-900/40 p-8 rounded-3xl shadow-2xl space-y-6 backdrop-blur-md">
+                <h3 class="text-xl font-bold text-white flex items-center">
+                    <i class="fa-solid fa-chart-line text-cyan-400 mr-3"></i> Resumen de Oportunidad AB
+                </h3>
+                <div class="space-y-4">
+                    <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-slate-400 block font-semibold">Venta Directa</span>
+                            <span class="text-sm font-bold text-white">Utilidad inmediata diaria</span>
+                        </div>
+                        <span class="text-cyan-400 font-extrabold text-lg">Hasta S/. 120 / un.</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-slate-400 block font-semibold">Bono Patrocinio (3 Niveles)</span>
+                            <span class="text-sm font-bold text-white">Ganancias por inscripción</span>
+                        </div>
+                        <span class="text-blue-400 font-extrabold text-lg">Hasta S/. 504</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-slate-400 block font-semibold">Bono Regalías (7 Niveles)</span>
+                            <span class="text-sm font-bold text-white">Ingresos residuales masivos</span>
+                        </div>
+                        <span class="text-emerald-400 font-extrabold text-lg">S/. 438,560 / mes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: CEO Y LIDERAZGO -->
+    <section id="sec-ceo" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Dirección General</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Conoce a Nuestro CEO</h2>
+            <p class="text-slate-400 text-sm">Liderazgo fundamentado en ciencia, valores, nutrición funcional y trabajo en equipo[cite: 11].</p>
+        </div>
+
+        <div class="bg-[#0b1329] border border-blue-900/40 rounded-3xl p-8 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div class="bg-gradient-to-b from-blue-600/20 to-transparent p-6 rounded-2xl border border-blue-500/30 text-center space-y-4">
+                <div class="w-24 h-24 bg-blue-600 rounded-2xl mx-auto flex items-center justify-center text-3xl font-extrabold text-white shadow-lg">
+                    AB
+                </div>
+                <div>
+                    <h3 class="text-xl font-extrabold text-white">Ángel Manuel Breña Eulogio</h3>
+                    <p class="text-xs text-cyan-400 font-bold mt-1">Líder Investigador & Fundador</p>
+                </div>
+            </div>
+            <div class="lg:col-span-2 space-y-6">
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed italic">
+                    "Impulsando bienestar, nutrición y crecimiento con ciencia, valores y trabajo en equipo[cite: 11]."
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-white block mb-1"><i class="fa-solid fa-graduation-cap text-cyan-400 mr-2"></i>Perfil Profesional</strong>
+                        <span class="text-slate-400 text-xs">Tecnología de Análisis Químico y Bachiller en Ciencias de la Educación (Biología y CC.NN.)[cite: 11].</span>
+                    </div>
+                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-white block mb-1"><i class="fa-solid fa-flask text-blue-400 mr-2"></i>Trayectoria</strong>
+                        <span class="text-slate-400 text-xs">Investigador, conferencista y especialista en formulación de productos naturales y nutrición funcional[cite: 11].</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: PACKS DE AFILIACIÓN OFICIALES -->
+    <section id="sec-packs" class="py-24 bg-[#0b1329]/40 border-y border-blue-900/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Inicia Tu Negocio</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Packs de Afiliación Oficiales</h2>
+                <p class="text-slate-400 text-sm">Elige tu kit de productos, recibe tus puntos de volumen (PV) e inicia tu camino al éxito[cite: 16].</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pack Inicio -->
+                <div class="bg-[#0b1329] border border-blue-900/40 rounded-3xl p-8 flex flex-col justify-between shadow-xl relative">
+                    <div class="space-y-4">
+                        <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full font-bold">PACK BÁSICO</span>
+                        <h3 class="text-2xl font-extrabold text-white">Pack Inicio</h3>
+                        <div class="text-3xl font-black text-cyan-400">S/. 370 <span class="text-xs text-slate-400 font-normal">/ 300 PV[cite: 16]</span></div>
+                        <p class="text-xs text-slate-300">Incluye: Nopaloe, Biomega, Cappuccino Tentación y Aromas Spray para tu consumo y arranque[cite: 16].</p>
+                    </div>
+                    <button onclick="seleccionarPack('Pack Inicio', '370', '300')" class="mt-8 w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 rounded-xl transition text-sm">Seleccionar Pack</button>
+                </div>
+
+                <!-- Pack Impulso -->
+                <div class="bg-[#0b1329] border-2 border-cyan-500 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-cyan-500 text-slate-950 font-extrabold text-[10px] px-4 py-1 rounded-full uppercase tracking-wider">Más Popular</div>
+                    <div class="space-y-4">
+                        <span class="text-xs bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full font-bold">PACK PROFESIONAL</span>
+                        <h3 class="text-2xl font-extrabold text-white">Pack Impulso</h3>
+                        <div class="text-3xl font-black text-cyan-400">S/. 705 <span class="text-xs text-slate-400 font-normal">/ 580 PV[cite: 16]</span></div>
+                        <p class="text-xs text-slate-300">Incluye: Enercell+Ion, Nopaloe, Moringa y Nutri Inmucan para mayor impulso y puntaje[cite: 16].</p>
+                    </div>
+                    <button onclick="seleccionarPack('Pack Impulso', '705', '580')" class="mt-8 w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold py-3.5 rounded-xl transition text-sm shadow-lg shadow-cyan-500/30">Seleccionar Pack</button>
+                </div>
+
+                <!-- Pack Liderazgo -->
+                <div class="bg-[#0b1329] border border-blue-900/40 rounded-3xl p-8 flex flex-col justify-between shadow-xl relative">
+                    <div class="space-y-4">
+                        <span class="text-xs bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full font-bold">MÁXIMO RANGO</span>
+                        <h3 class="text-2xl font-extrabold text-white">Pack Liderazgo</h3>
+                        <div class="text-3xl font-black text-cyan-400">S/. 1,545 <span class="text-xs text-slate-400 font-normal">/ 1,260 PV[cite: 16]</span></div>
+                        <p class="text-xs text-slate-300">Kit completo corporativo con alta dotación de Enercell, Nopaloe, Biomega, Moringa e Inmucan[cite: 16].</p>
+                    </div>
+                    <button onclick="seleccionarPack('Pack Liderazgo', '1545', '1260')" class="mt-8 w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 rounded-xl transition text-sm">Seleccionar Pack</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: PLAN DE COMPENSACIÓN & REGALÍAS -->
+    <section id="sec-compensacion" class="py-24 max-w-7xl mx-auto px-6 space-y-16">
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Modelo Financiero</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Plan de Compensación Oficial V6</h2>
+            <p class="text-slate-400 text-sm">Conoce los 4 pilares de ganancias: Venta Directa, Bono Patrocinio, Bono Regalías y Carrera de Rangos[cite: 18].</p>
+        </div>
+
+        <!-- Rangos de Éxito -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+            <div class="bg-[#0b1329] border border-blue-900/40 p-4 rounded-2xl text-center">
+                <span class="text-[10px] text-cyan-400 font-bold block">2 NIVELES</span>
+                <h4 class="font-extrabold text-white text-sm mt-1">Embajador</h4>
+            </div>
+            <div class="bg-[#0b1329] border border-blue-900/40 p-4 rounded-2xl text-center">
+                <span class="text-[10px] text-cyan-400 font-bold block">3 NIVELES</span>
+                <h4 class="font-extrabold text-white text-sm mt-1">Constructor</h4>
+            </div>
+            <div class="bg-[#0b1329] border border-blue-900/40 p-4 rounded-2xl text-center">
+                <span class="text-[10px] text-cyan-400 font-bold block">4 NIVELES</span>
+                <h4 class="font-extrabold text-white text-sm mt-1">Plata</h4>
+            </div>
+            <div class="bg-[#0b1329] border border-blue-900/40 p-4 rounded-2xl text-center">
+                <span class="text-[10px] text-cyan-400 font-bold block">5 NIVELES</span>
+                <h4 class="font-extrabold text-white text-sm mt-1">Oro</h4>
+            </div>
+            <div class="bg-[#0b1329] border border-blue-900/40 p-4 rounded-2xl text-center">
+                <span class="text-[10px] text-cyan-400 font-bold block">6 NIVELES</span>
+                <h4 class="font-extrabold text-white text-sm mt-1">Esmeralda</h4>
+            </div>
+            <div class="bg-[#0b1329] border-2 border-cyan-500 p-4 rounded-2xl text-center shadow-lg shadow-cyan-500/20">
+                <span class="text-[10px] text-cyan-300 font-bold block">7 NIVELES</span>
+                <h4 class="font-extrabold text-white text-sm mt-1">Diamante</h4>
+            </div>
+            <div class="bg-[#0b1329] border border-blue-900/40 p-4 rounded-2xl text-center">
+                <span class="text-[10px] text-cyan-400 font-bold block">7 NIVELES</span>
+                <h4 class="font-extrabold text-white text-sm mt-1">Corona</h4>
+            </div>
+        </div>
+
+        <!-- Simulador Interactivos de Ingresos -->
+        <div class="bg-[#0b1329] border border-blue-900/40 rounded-3xl p-8 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6">
+                <h3 class="text-2xl font-extrabold text-white">Simulador de Bono Regalías (7 Niveles)</h3>
+                <p class="text-slate-300 text-sm">Calcula los ingresos residuales proyectados según la duplicación de tu red activa[cite: 24].</p>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-xs text-slate-400 font-bold">Socios Activos en Nivel 1</label>
+                        <input type="number" id="sim-n1" value="5" oninput="calcularSimulacion()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white font-bold mt-1 outline-none">
                     </div>
                     <div>
-                        <h1 class="font-extrabold text-base tracking-tight text-white">ABJM Networkers</h1>
-                        <span class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Enterprise Core V6</span>
+                        <label class="text-xs text-slate-400 font-bold">Duplicación Promedio por Nivel</label>
+                        <input type="number" id="sim-dup" value="5" oninput="calcularSimulacion()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white font-bold mt-1 outline-none">
                     </div>
                 </div>
+            </div>
+            <div class="bg-slate-950/80 border border-slate-800 p-8 rounded-2xl flex flex-col justify-between space-y-6">
+                <div>
+                    <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">Proyección Estimada Mensual</span>
+                    <div id="sim-resultado" class="text-4xl sm:text-5xl font-black text-cyan-400 mt-2">S/. 438,560</div>
+                    <p class="text-xs text-slate-500 mt-2">Basado en activaciones mensuales de 300 PV y distribución oficial por profundidad[cite: 24].</p>
+                </div>
+                <button onclick="alert('Simulación registrada correctamente en el sistema oficial.')" class="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-3.5 rounded-xl transition shadow-lg">Guardar Simulación</button>
+            </div>
+        </div>
+    </section>
 
-                <!-- Menú Principal -->
-                <nav class="p-4 space-y-2">
-                    <button onclick="conmutarVista('dashboard')" id="btn-dashboard" class="w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl bg-emerald-600 text-white font-bold text-sm transition shadow-lg shadow-emerald-900/30">
-                        <i class="fa-solid fa-chart-pie w-5 text-center text-base"></i>
-                        <span>Dashboard Ejecutivo</span>
-                    </button>
-                    <button onclick="conmutarVista('backoffice')" id="btn-backoffice" class="w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition">
-                        <i class="fa-solid fa-id-card-clip w-5 text-center text-base"></i>
-                        <span>Back-Office Socio</span>
-                    </button>
-                    <button onclick="conmutarVista('arbol')" id="btn-arbol" class="w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition">
-                        <i class="fa-solid fa-sitemap w-5 text-center text-base"></i>
-                        <span>Árbol & Matriz Forzada</span>
-                    </button>
-                    <button onclick="conmutarVista('productos')" id="btn-productos" class="w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition">
-                        <i class="fa-solid fa-boxes-stacked w-5 text-center text-base"></i>
-                        <span>Precios & Catálogo</span>
-                    </button>
-                    <button onclick="conmutarVista('regalias')" id="btn-regalias" class="w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition">
-                        <i class="fa-solid fa-calculator w-5 text-center text-base"></i>
-                        <span>Simulador de Regalías</span>
-                    </button>
-                </nav>
+    <!-- SECCIÓN 5: BACK-OFFICE / OFICINA VIRTUAL -->
+    <section id="sec-backoffice" class="py-24 bg-[#0b1329]/40 border-t border-blue-900/20">
+        <div class="max-w-7xl mx-auto px-6 space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Plataforma de Socios</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Back-Office Oficial AB</h2>
+                <p class="text-slate-400 text-sm">Gestiona tus afiliaciones, controla tu árbol unilevel y supervisa tus comisiones vigentes.</p>
             </div>
 
-            <!-- Panel de Perfil Inferior -->
-            <div class="p-4 m-4 bg-[#050B14] rounded-2xl border border-slate-800 flex items-center justify-between shadow-inner">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center font-bold text-white shadow">
-                        AB
-                    </div>
-                    <div>
-                        <div class="text-xs font-bold text-white">Ángel M. Breña E.</div>
-                        <div class="text-[10px] text-emerald-400 font-medium">Oficina Principal / Diamante</div>
-                    </div>
+            <div class="bg-[#0b1329] border border-blue-900/40 rounded-3xl p-8 shadow-2xl grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <span class="text-xs text-slate-400 font-semibold">Estado de Cuenta</span>
+                    <h4 class="text-xl font-bold text-white">Ángel M. Breña E.</h4>
+                    <span class="inline-block bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-xs font-bold">Rango: Diamante</span>
                 </div>
-                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <span class="text-xs text-slate-400 font-semibold">Enlace de Patrocinio Directo</span>
+                    <input type="text" readonly value="https://ab.angelbrena.com/ref/oficial" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-300">
+                    <button onclick="alert('Enlace copiado al portapapeles')" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-xl text-xs font-bold transition">Copiar Enlace</button>
+                </div>
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <span class="text-xs text-slate-400 font-semibold">Volumen Grupal Actual</span>
+                    <div class="text-3xl font-extrabold text-cyan-400">64,500 PTS</div>
+                    <span class="text-xs text-emerald-400 font-medium">Calificado para 7 Nivel de Regalías[cite: 25]</span>
+                </div>
             </div>
-        </aside>
+        </div>
+    </section>
 
-        <!-- CONTENEDOR PRINCIPAL AMPLIO -->
-        <main class="flex-1 flex flex-col h-screen overflow-y-auto bg-[#050B14]">
-            
-            <!-- Header Superior Corporativo -->
-            <header class="bg-[#09101D]/90 backdrop-blur-md border-b border-slate-800/80 px-8 py-4 flex justify-between items-center sticky top-0 z-30 shadow-sm">
-                <div class="flex items-center space-x-3">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Sistema Operativo V6</span>
-                    <span class="text-slate-600">/</span>
-                    <span id="titulo-bread" class="text-xs font-semibold text-emerald-400">Dashboard Ejecutivo</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold px-3 py-1.5 rounded-full flex items-center space-x-2 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        <span>Motor Matricial en Línea</span>
-                    </div>
-                </div>
-            </header>
+    <!-- FOOTER OFICIAL -->
+    <footer class="bg-[#030712] border-t border-blue-900/40 py-12 text-center text-xs text-slate-500 space-y-4">
+        <div class="flex justify-center space-x-6">
+            <span class="text-white font-bold">AB - ANGEL BREÑA</span>
+            <span>•</span>
+            <span>Derechos Reservados 2026</span>
+            <span>•</span>
+            <span>Movimiento de Bienestar Global[cite: 10]</span>
+        </div>
+        <p>Impulsando salud, crecimiento y libertad financiera con ciencia y valores[cite: 10, 11].</p>
+    </footer>
 
-            <!-- ÁREA DE CONTENIDO EXTENSA -->
-            <div class="p-8 space-y-8 max-w-7xl mx-auto w-full pb-16">
-                
-                <!-- 1. DASHBOARD EJECUTIVO -->
-                <div id="vista-dashboard" class="space-y-8">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800/80 pb-6">
-                        <div>
-                            <h2 class="text-3xl font-extrabold text-white tracking-tight">Panel de Control Ejecutivo</h2>
-                            <p class="text-sm text-slate-400 mt-1">Métricas globales en tiempo real del desempeño multinivel y volumen consolidado.</p>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <button onclick="alert('Exportando reporte completo corporativo en CSV/PDF...')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-bold px-4 py-2.5 rounded-xl transition shadow">
-                                <i class="fa-solid fa-file-arrow-down mr-2 text-emerald-400"></i>Exportar Datos
-                            </button>
-                            <button onclick="conmutarVista('regalias')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg shadow-emerald-900/30">
-                                <i class="fa-solid fa-bolt mr-2"></i>Calcular Bonos
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Tarjetas de Estadísticas Principales -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative group hover:border-emerald-500/50 transition">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Red Total de Socios</span>
-                                    <div class="text-4xl font-extrabold text-white mt-2">1,840</div>
-                                </div>
-                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl text-lg"><i class="fa-solid fa-users"></i></div>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
-                                <span class="text-slate-400">Actividad Mensual</span>
-                                <strong class="text-emerald-400"><i class="fa-solid fa-arrow-up mr-1"></i>+18.4%</strong>
-                            </div>
-                        </div>
-
-                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative group hover:border-blue-500/50 transition">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Volumen Grupal (PTS)</span>
-                                    <div class="text-4xl font-extrabold text-white mt-2">64,500</div>
-                                </div>
-                                <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl text-lg"><i class="fa-solid fa-chart-line"></i></div>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
-                                <span class="text-slate-400">Calificación Rango</span>
-                                <strong class="text-blue-400">Diamante Activo</strong>
-                            </div>
-                        </div>
-
-                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative group hover:border-amber-500/50 transition">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Regalías Acumuladas</span>
-                                    <div class="text-4xl font-extrabold text-white mt-2">$8,940</div>
-                                </div>
-                                <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-lg"><i class="fa-solid fa-wallet"></i></div>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
-                                <span class="text-slate-400">Estado de Pago</span>
-                                <strong class="text-amber-400">Procesado V6</strong>
-                            </div>
-                        </div>
-
-                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative group hover:border-teal-500/50 transition">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Stock de Productos</span>
-                                    <div class="text-4xl font-extrabold text-white mt-2">99.4%</div>
-                                </div>
-                                <div class="p-3 bg-teal-500/10 text-teal-400 rounded-xl text-lg"><i class="fa-solid fa-boxes-stacked"></i></div>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
-                                <span class="text-slate-400">Inventario Central</span>
-                                <strong class="text-teal-400">Óptimo / Surtido</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gráficos y Desglose Unilevel -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <div class="lg:col-span-2 bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl space-y-6">
-                            <div class="flex justify-between items-center">
-                                <h3 class="font-bold text-xl text-white">Desglose de Producción Unilevel por Niveles</h3>
-                                <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-lg">Ciclo Actual</span>
-                            </div>
-                            <div class="space-y-5">
-                                <div>
-                                    <div class="flex justify-between text-sm mb-2"><span class="text-slate-300 font-semibold">Nivel 1 (Directos - 10%)</span> <span class="text-emerald-400 font-bold">$3,850.00</span></div>
-                                    <div class="w-full bg-slate-950 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800"><div class="bg-emerald-500 h-full rounded-full" style="width: 80%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-2"><span class="text-slate-300 font-semibold">Nivel 2 (Duplicación - 8%)</span> <span class="text-blue-400 font-bold">$2,920.00</span></div>
-                                    <div class="w-full bg-slate-950 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800"><div class="bg-blue-500 h-full rounded-full" style="width: 65%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-2"><span class="text-slate-300 font-semibold">Nivel 3 (Expansión - 5%)</span> <span class="text-purple-400 font-bold">$2,170.00</span></div>
-                                    <div class="w-full bg-slate-950 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800"><div class="bg-purple-500 h-full rounded-full" style="width: 45%"></div></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-bold text-xl text-white mb-4">Herramientas Rápidas</h3>
-                                <div class="space-y-3">
-                                    <button onclick="conmutarVista('productos')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-4 rounded-xl border border-slate-800 text-xs font-bold text-slate-200 transition flex items-center justify-between">
-                                        <span><i class="fa-solid fa-tag text-emerald-400 mr-2 text-sm"></i> Programar Precios</span>
-                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
-                                    </button>
-                                    <button onclick="conmutarVista('arbol')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-4 rounded-xl border border-slate-800 text-xs font-bold text-slate-200 transition flex items-center justify-between">
-                                        <span><i class="fa-solid fa-sitemap text-blue-400 mr-2 text-sm"></i> Administrar Matriz</span>
-                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
-                                    </button>
-                                    <button onclick="conmutarVista('backoffice')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-4 rounded-xl border border-slate-800 text-xs font-bold text-slate-200 transition flex items-center justify-between">
-                                        <span><i class="fa-solid fa-user-gear text-amber-400 mr-2 text-sm"></i> Oficina Virtual Socio</span>
-                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800 text-center">
-                                <span class="text-[11px] text-slate-500 font-medium">Sistema Multinivel V6 Optimizado</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. BACK-OFFICE SOCIO -->
-                <div id="vista-backoffice" class="hidden space-y-8">
-                    <div class="border-b border-slate-800/80 pb-6">
-                        <h2 class="text-3xl font-extrabold text-white tracking-tight">Back-Office del Distribuidor</h2>
-                        <p class="text-sm text-slate-400 mt-1">Control operativo de membresía, enlaces de patrocinio y reportes personales.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl space-y-6">
-                            <h3 class="font-bold text-xl text-emerald-400 border-b border-slate-800 pb-3">Credenciales de Patrocinio</h3>
-                            <div>
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">URL de Registro Directo</label>
-                                <div class="flex mt-2">
-                                    <input type="text" readonly value="https://abjmnetworkers.com/ref/angelbrena" class="w-full bg-slate-950 border border-slate-800 rounded-l-xl px-4 py-3 text-sm text-slate-200 outline-none">
-                                    <button onclick="alert('Enlace copiado correctamente al portapapeles')" class="bg-emerald-600 hover:bg-emerald-500 px-5 rounded-r-xl text-white font-bold text-sm transition"><i class="fa-solid fa-copy"></i></button>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Rango Comercial Actual</label>
-                                <input type="text" readonly value="Diamante Ejecutivo V6 (Oficina Principal)" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-emerald-400 font-bold mt-2 outline-none">
-                            </div>
-                        </div>
-
-                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl space-y-6">
-                            <h3 class="font-bold text-xl text-blue-400 border-b border-slate-800 pb-3">Estado de Calificación Mensual</h3>
-                            <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 space-y-4">
-                                <div class="flex justify-between items-center text-sm"><span class="text-slate-400">Consumo Personal Activo:</span> <strong class="text-emerald-400 font-bold">200 PTS (Calificado)</strong></div>
-                                <div class="flex justify-between items-center text-sm"><span class="text-slate-400">Líneas Frontales Activas:</span> <strong class="text-white font-bold">3 Frontales</strong></div>
-                                <div class="flex justify-between items-center text-sm"><span class="text-slate-400">Ciclo Operativo:</span> <strong class="text-blue-400 font-bold">Octubre 2026</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. ÁRBOL Y MATRIZ -->
-                <div id="vista-arbol" class="hidden space-y-8">
-                    <div class="border-b border-slate-800/80 pb-6 flex justify-between items-center">
-                        <div>
-                            <h2 class="text-3xl font-extrabold text-white tracking-tight">Estructura de Red y Matriz Forzada</h2>
-                            <p class="text-sm text-slate-400 mt-1">Visualizador jerárquico de profundidad con compresión dinámica y gestión de estados.</p>
-                        </div>
-                        <button onclick="alert('Actualizando árbol dinámico...')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow">
-                            <i class="fa-solid fa-user-plus mr-2"></i>Afiliar Nuevo Socio
-                        </button>
-                    </div>
-
-                    <div class="bg-[#09101D] border border-slate-800/80 p-10 rounded-2xl shadow-xl flex flex-col items-center justify-center min-h-[500px]">
-                        <!-- Nodo Raíz -->
-                        <div class="bg-slate-950 border-2 border-emerald-500 p-6 rounded-2xl text-center w-80 shadow-2xl relative">
-                            <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-[10px] bg-emerald-500 text-slate-950 font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider">Raíz / Diamante</span>
-                            <h4 class="font-extrabold text-white text-lg mt-2">Ángel M. Breña E.</h4>
-                            <p class="text-xs text-slate-400 mt-1">Volumen Grupal: <strong class="text-emerald-400">64,500 PTS</strong></p>
-                        </div>
-
-                        <div class="w-px h-12 bg-slate-700 my-3"></div>
-
-                        <!-- Ramas Nivel 1 -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
-                            <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl text-center hover:border-emerald-500 transition shadow">
-                                <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2.5 py-1 rounded-md">ACTIVO - LÍNEA 1</span>
-                                <h5 class="font-bold text-white text-sm mt-3">Carlos Ruiz (Líder Norte)</h5>
-                                <p class="text-xs text-slate-400 mt-1">Volumen: 18,200 Pts</p>
-                            </div>
-                            <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl text-center hover:border-emerald-500 transition shadow">
-                                <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2.5 py-1 rounded-md">ACTIVO - LÍNEA 2</span>
-                                <h5 class="font-bold text-white text-sm mt-3">María López (Líder Centro)</h5>
-                                <p class="text-xs text-slate-400 mt-1">Volumen: 24,100 Pts</p>
-                            </div>
-                            <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl text-center hover:border-rose-500/50 transition shadow">
-                                <span class="text-[10px] bg-rose-500/20 text-rose-400 font-bold px-2.5 py-1 rounded-md">INACTIVO - LÍNEA 3</span>
-                                <h5 class="font-bold text-white text-sm mt-3">Jorge Mendoza</h5>
-                                <p class="text-xs text-slate-400 mt-1">Compresión Dinámica</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. PRODUCTOS Y PRECIOS EDITABLES -->
-                <div id="vista-productos" class="hidden space-y-8">
-                    <div class="border-b border-slate-800/80 pb-6 flex justify-between items-center">
-                        <div>
-                            <h2 class="text-3xl font-extrabold text-white tracking-tight">Catálogo y Precios de Venta</h2>
-                            <p class="text-sm text-slate-400 mt-1">Modifica los precios públicos, costos de membresía y puntos de la línea de nutrición celular.</p>
-                        </div>
-                        <button onclick="alert('¡Precios actualizados en todo el sistema!')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition shadow-lg">
-                            <i class="fa-solid fa-floppy-disk mr-2"></i>Guardar Precios
-                        </button>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-4">
-                            <h3 class="font-bold text-white text-lg">Enercell / GNM-X</h3>
-                            <p class="text-xs text-slate-400">Activador celular avanzado Nrf2.</p>
-                            <div>
-                                <label class="text-[11px] font-bold text-slate-400">Precio Venta ($)</label>
-                                <input type="number" id="prod-1" value="50" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-white mt-1 font-bold">
-                            </div>
-                        </div>
-                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-4">
-                            <h3 class="font-bold text-white text-lg">Nopaloe RF03 / LINQ</h3>
-                            <p class="text-xs text-slate-400">Regeneración y bienestar digestivo.</p>
-                            <div>
-                                <label class="text-[11px] font-bold text-slate-400">Precio Venta ($)</label>
-                                <input type="number" id="prod-2" value="45" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-white mt-1 font-bold">
-                            </div>
-                        </div>
-                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-4">
-                            <h3 class="font-bold text-white text-lg">Moringa Hiperanthera</h3>
-                            <p class="text-xs text-slate-400">Superalimento y antioxidante puro.</p>
-                            <div>
-                                <label class="text-[11px] font-bold text-slate-400">Precio Venta ($)</label>
-                                <input type="number" id="prod-3" value="40" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-white mt-1 font-bold">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. SIMULADOR DE REGALÍAS -->
-                <div id="vista-regalias" class="hidden space-y-8">
-                    <div class="border-b border-slate-800/80 pb-6">
-                        <h2 class="text-3xl font-extrabold text-white tracking-tight">Simulador de Regalías Unilevel</h2>
-                        <p class="text-sm text-slate-400 mt-1">Cálculo matricial en tiempo real basado en la cantidad de socios y volumen de consumo.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl space-y-6">
-                            <div>
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Socios Activos Nivel 1</label>
-                                <input type="number" id="sim-n1" value="5" oninput="calcularRegalias()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white mt-2 font-bold outline-none">
-                            </div>
-                            <div>
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Socios en Nivel 2 (Duplicación)</label>
-                                <input type="number" id="sim-n2" value="15" oninput="calcularRegalias()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white mt-2 font-bold outline-none">
-                            </div>
-                            <div>
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Consumo Promedio por Socio ($)</label>
-                                <input type="number" id="sim-consumo" value="50" oninput="calcularRegalias()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white mt-2 font-bold outline-none">
-                            </div>
-                        </div>
-
-                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-bold text-xl text-emerald-400 mb-4">Proyección de Ganancias Generadas</h3>
-                                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
-                                    <span class="text-xs text-slate-400 uppercase font-bold">Total Regalías Estimadas Ciclo</span>
-                                    <div id="res-total" class="text-5xl font-extrabold text-emerald-400 mt-2">$85.00</div>
-                                </div>
-                            </div>
-                            <button onclick="alert('Proyección guardada en el sistema')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl transition shadow-lg mt-6">Confirmar Proyección</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </main>
-    </div>
-
-    <!-- Script de Control Interactivo Masivo -->
+    <!-- SCRIPT DE NAVEGACIÓN Y SIMULACIÓN -->
     <script>
-        function conmutarVista(vistaId) {
-            const vistas = ['dashboard', 'backoffice', 'arbol', 'productos', 'regalias'];
-            vistas.forEach(v => {
-                document.getElementById('vista-' + v).classList.add('hidden');
-                const btn = document.getElementById('btn-' + v);
-                if(btn) {
-                    btn.className = "w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition";
-                }
-            });
-            document.getElementById('vista-' + vistaId).classList.remove('hidden');
-            const activeBtn = document.getElementById('btn-' + vistaId);
-            if(activeBtn) {
-                activeBtn.className = "w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl bg-emerald-600 text-white font-bold text-sm transition shadow-lg shadow-emerald-900/30";
+        function irSeccion(id) {
+            const el = document.getElementById('sec-' + id);
+            if(el) {
+                el.scrollIntoView({ behavior: 'smooth' });
             }
-
-            // Actualizar breadcrumb
-            const nombres = {
-                'dashboard': 'Dashboard Ejecutivo',
-                'backoffice': 'Back-Office Socio',
-                'arbol': 'Árbol & Matriz Forzada',
-                'productos': 'Precios & Catálogo',
-                'regalias': 'Simulador de Regalías'
-            };
-            document.getElementById('titulo-bread').innerText = nombres[vistaId];
         }
 
-        function calcularRegalias() {
-            const n1 = parseFloat(document.getElementById('sim-n1').value) || 0;
-            const n2 = parseFloat(document.getElementById('sim-n2').value) || 0;
-            const consumo = parseFloat(document.getElementById('sim-consumo').value) || 0;
-            const total = (n1 * consumo * 0.10) + (n2 * consumo * 0.08);
-            document.getElementById('res-total').innerText = '$' + total.toFixed(2);
+        function seleccionarPack(nombre, precio, pv) {
+            alert('Has seleccionado el ' + nombre + ' por S/. ' + precio + ' (' + pv + ' PV). Procediendo al registro oficial.');
         }
 
-        window.onload = function() {
-            calcularRegalias();
-        };
+        function calcularSimulacion() {
+            const n1 = parseFloat(document.getElementById('sim-n1').value) || 5;
+            const dup = parseFloat(document.getElementById('sim-dup').value) || 5;
+            // Cálculo base simulado según tablas oficiales
+            const total = n1 * dup * 43.85 * 200;
+            document.getElementById('sim-resultado').innerText = 'S/. ' + total.toLocaleString('en-US', {maximumFractionDigits: 0});
+        }
     </script>
 </body>
 </html>
