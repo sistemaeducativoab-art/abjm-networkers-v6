@@ -1,306 +1,371 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABJM Networkers - Back-Office Corporativo V6</title>
+    <title>ABJM Networkers - Enterprise MLM System V6</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome Pro / Free Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta+Sans', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-[#090D16] text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+<body class="bg-[#050B14] text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
 
     <div class="flex h-screen overflow-hidden">
         
-        <!-- SIDEBAR DE NAVEGACIÓN PROFESIONAL -->
-        <aside class="w-72 bg-[#0E1525] border-r border-slate-800/80 flex flex-col justify-between hidden lg:flex">
+        <!-- SIDEBAR DE NAVEGACIÓN EXTENDIDA -->
+        <aside class="w-80 bg-[#09101D] border-r border-slate-800/80 flex flex-col justify-between hidden lg:flex shadow-2xl">
             <div>
-                <!-- Logo / Marca -->
-                <div class="p-6 flex items-center space-x-3 border-b border-slate-800/60">
-                    <div class="bg-gradient-to-br from-emerald-500 to-teal-700 p-2.5 rounded-xl text-white shadow-lg shadow-emerald-900/40">
-                        <i class="fa-solid fa-cube text-xl"></i>
+                <!-- Marca Corporativa -->
+                <div class="p-6 border-b border-slate-800/80 flex items-center space-x-3 bg-[#050B14]/40">
+                    <div class="bg-gradient-to-tr from-emerald-600 to-teal-400 p-3 rounded-2xl text-white shadow-lg shadow-emerald-900/50">
+                        <i class="fa-solid fa-network-wired text-xl"></i>
                     </div>
                     <div>
-                        <h1 class="font-bold text-lg tracking-tight text-white">ABJM Networkers</h1>
-                        <span class="text-[10px] uppercase tracking-widest text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded">Sistema V6 Pro</span>
+                        <h1 class="font-extrabold text-base tracking-tight text-white">ABJM Networkers</h1>
+                        <span class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Enterprise Core V6</span>
                     </div>
                 </div>
 
-                <!-- Menú de Opciones -->
-                <nav class="p-4 space-y-1.5">
-                    <button onclick="navegar('dashboard')" id="nav-dashboard" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-sm transition shadow-lg shadow-emerald-900/20">
-                        <i class="fa-solid fa-chart-pie w-5 text-center"></i>
-                        <span>Panel Principal</span>
+                <!-- Menú Principal -->
+                <nav class="p-4 space-y-2">
+                    <button onclick="conmutarVista('dashboard')" id="btn-dashboard" class="w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl bg-emerald-600 text-white font-bold text-sm transition shadow-lg shadow-emerald-900/30">
+                        <i class="fa-solid fa-chart-pie w-5 text-center text-base"></i>
+                        <span>Dashboard Ejecutivo</span>
                     </button>
-                    <button onclick="navegar('backoffice')" id="nav-backoffice" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 font-medium text-sm transition">
-                        <i class="fa-solid fa-user-tie w-5 text-center"></i>
+                    <button onclick="conmutarVista('backoffice')" id="btn-backoffice" class="w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition">
+                        <i class="fa-solid fa-id-card-clip w-5 text-center text-base"></i>
                         <span>Back-Office Socio</span>
                     </button>
-                    <button onclick="navegar('arbol')" id="nav-arbol" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 font-medium text-sm transition">
-                        <i class="fa-solid fa-sitemap w-5 text-center"></i>
-                        <span>Red y Árbol Unilevel</span>
+                    <button onclick="conmutarVista('arbol')" id="btn-arbol" class="w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition">
+                        <i class="fa-solid fa-sitemap w-5 text-center text-base"></i>
+                        <span>Árbol & Matriz Forzada</span>
                     </button>
-                    <button onclick="navegar('productos')" id="nav-productos" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 font-medium text-sm transition">
-                        <i class="fa-solid fa-box-open w-5 text-center"></i>
-                        <span>Precios y Productos</span>
+                    <button onclick="conmutarVista('productos')" id="btn-productos" class="w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition">
+                        <i class="fa-solid fa-boxes-stacked w-5 text-center text-base"></i>
+                        <span>Precios & Catálogo</span>
                     </button>
-                    <button onclick="navegar('regalias')" id="nav-regalias" class="w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 font-medium text-sm transition">
-                        <i class="fa-solid fa-wallet w-5 text-center"></i>
-                        <span>Cálculo de Regalías</span>
+                    <button onclick="conmutarVista('regalias')" id="btn-regalias" class="w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition">
+                        <i class="fa-solid fa-calculator w-5 text-center text-base"></i>
+                        <span>Simulador de Regalías</span>
                     </button>
                 </nav>
             </div>
 
-            <!-- Perfil en el Sidebar -->
-            <div class="p-4 m-4 bg-slate-900/80 rounded-2xl border border-slate-800/80 flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center font-bold text-white text-sm shadow">
-                    AB
+            <!-- Panel de Perfil Inferior -->
+            <div class="p-4 m-4 bg-[#050B14] rounded-2xl border border-slate-800 flex items-center justify-between shadow-inner">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center font-bold text-white shadow">
+                        AB
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-white">Ángel M. Breña E.</div>
+                        <div class="text-[10px] text-emerald-400 font-medium">Oficina Principal / Diamante</div>
+                    </div>
                 </div>
-                <div class="overflow-hidden">
-                    <div class="text-xs font-bold text-slate-200 truncate">Ángel M. Breña E.</div>
-                    <div class="text-[10px] text-emerald-400 truncate">Rango Diamante</div>
-                </div>
+                <i class="fa-solid fa-circle-check text-emerald-400"></i>
             </div>
         </aside>
 
-        <!-- CONTENIDO PRINCIPAL -->
-        <main class="flex-1 flex flex-col h-screen overflow-y-auto">
+        <!-- CONTENEDOR PRINCIPAL AMPLIO -->
+        <main class="flex-1 flex flex-col h-screen overflow-y-auto bg-[#050B14]">
             
-            <!-- Header Superior -->
-            <header class="bg-[#0E1525]/80 backdrop-blur-md border-b border-slate-800/80 px-8 py-4 flex justify-between items-center sticky top-0 z-30">
-                <div class="flex items-center space-x-4">
-                    <span class="text-sm font-semibold text-slate-300">Oficina Virtual Global</span>
+            <!-- Header Superior Corporativo -->
+            <header class="bg-[#09101D]/90 backdrop-blur-md border-b border-slate-800/80 px-8 py-4 flex justify-between items-center sticky top-0 z-30 shadow-sm">
+                <div class="flex items-center space-x-3">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Sistema Operativo V6</span>
+                    <span class="text-slate-600">/</span>
+                    <span id="titulo-bread" class="text-xs font-semibold text-emerald-400">Dashboard Ejecutivo</span>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <div class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center space-x-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>Servidor Sincronizado V6</span>
+                    <div class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold px-3 py-1.5 rounded-full flex items-center space-x-2 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Motor Matricial en Línea</span>
                     </div>
                 </div>
             </header>
 
-            <!-- Contenedor dinámico de secciones -->
-            <div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+            <!-- ÁREA DE CONTENIDO EXTENSA -->
+            <div class="p-8 space-y-8 max-w-7xl mx-auto w-full pb-16">
                 
-                <!-- SECCIÓN 1: DASHBOARD -->
-                <div id="sec-dashboard" class="space-y-6">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <!-- 1. DASHBOARD EJECUTIVO -->
+                <div id="vista-dashboard" class="space-y-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800/80 pb-6">
                         <div>
-                            <h2 class="text-3xl font-extrabold text-white tracking-tight">Panel de Control General</h2>
-                            <p class="text-sm text-slate-400 mt-1">Resumen en tiempo real del rendimiento de tu red de mercadeo y volumen comercial.</p>
+                            <h2 class="text-3xl font-extrabold text-white tracking-tight">Panel de Control Ejecutivo</h2>
+                            <p class="text-sm text-slate-400 mt-1">Métricas globales en tiempo real del desempeño multinivel y volumen consolidado.</p>
                         </div>
-                        <button onclick="alert('Generando reporte corporativo V6...')" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition shadow-lg shadow-emerald-900/30 flex items-center space-x-2">
-                            <i class="fa-solid fa-download"></i>
-                            <span>Exportar Reporte</span>
+                        <div class="flex items-center space-x-3">
+                            <button onclick="alert('Exportando reporte completo corporativo en CSV/PDF...')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-bold px-4 py-2.5 rounded-xl transition shadow">
+                                <i class="fa-solid fa-file-arrow-down mr-2 text-emerald-400"></i>Exportar Datos
+                            </button>
+                            <button onclick="conmutarVista('regalias')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg shadow-emerald-900/30">
+                                <i class="fa-solid fa-bolt mr-2"></i>Calcular Bonos
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjetas de Estadísticas Principales -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative group hover:border-emerald-500/50 transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Red Total de Socios</span>
+                                    <div class="text-4xl font-extrabold text-white mt-2">1,840</div>
+                                </div>
+                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl text-lg"><i class="fa-solid fa-users"></i></div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
+                                <span class="text-slate-400">Actividad Mensual</span>
+                                <strong class="text-emerald-400"><i class="fa-solid fa-arrow-up mr-1"></i>+18.4%</strong>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative group hover:border-blue-500/50 transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Volumen Grupal (PTS)</span>
+                                    <div class="text-4xl font-extrabold text-white mt-2">64,500</div>
+                                </div>
+                                <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl text-lg"><i class="fa-solid fa-chart-line"></i></div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
+                                <span class="text-slate-400">Calificación Rango</span>
+                                <strong class="text-blue-400">Diamante Activo</strong>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative group hover:border-amber-500/50 transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Regalías Acumuladas</span>
+                                    <div class="text-4xl font-extrabold text-white mt-2">$8,940</div>
+                                </div>
+                                <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-lg"><i class="fa-solid fa-wallet"></i></div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
+                                <span class="text-slate-400">Estado de Pago</span>
+                                <strong class="text-amber-400">Procesado V6</strong>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative group hover:border-teal-500/50 transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Stock de Productos</span>
+                                    <div class="text-4xl font-extrabold text-white mt-2">99.4%</div>
+                                </div>
+                                <div class="p-3 bg-teal-500/10 text-teal-400 rounded-xl text-lg"><i class="fa-solid fa-boxes-stacked"></i></div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs">
+                                <span class="text-slate-400">Inventario Central</span>
+                                <strong class="text-teal-400">Óptimo / Surtido</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráficos y Desglose Unilevel -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-2 bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl space-y-6">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-bold text-xl text-white">Desglose de Producción Unilevel por Niveles</h3>
+                                <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-lg">Ciclo Actual</span>
+                            </div>
+                            <div class="space-y-5">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2"><span class="text-slate-300 font-semibold">Nivel 1 (Directos - 10%)</span> <span class="text-emerald-400 font-bold">$3,850.00</span></div>
+                                    <div class="w-full bg-slate-950 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800"><div class="bg-emerald-500 h-full rounded-full" style="width: 80%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2"><span class="text-slate-300 font-semibold">Nivel 2 (Duplicación - 8%)</span> <span class="text-blue-400 font-bold">$2,920.00</span></div>
+                                    <div class="w-full bg-slate-950 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800"><div class="bg-blue-500 h-full rounded-full" style="width: 65%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2"><span class="text-slate-300 font-semibold">Nivel 3 (Expansión - 5%)</span> <span class="text-purple-400 font-bold">$2,170.00</span></div>
+                                    <div class="w-full bg-slate-950 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800"><div class="bg-purple-500 h-full rounded-full" style="width: 45%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl text-white mb-4">Herramientas Rápidas</h3>
+                                <div class="space-y-3">
+                                    <button onclick="conmutarVista('productos')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-4 rounded-xl border border-slate-800 text-xs font-bold text-slate-200 transition flex items-center justify-between">
+                                        <span><i class="fa-solid fa-tag text-emerald-400 mr-2 text-sm"></i> Programar Precios</span>
+                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
+                                    </button>
+                                    <button onclick="conmutarVista('arbol')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-4 rounded-xl border border-slate-800 text-xs font-bold text-slate-200 transition flex items-center justify-between">
+                                        <span><i class="fa-solid fa-sitemap text-blue-400 mr-2 text-sm"></i> Administrar Matriz</span>
+                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
+                                    </button>
+                                    <button onclick="conmutarVista('backoffice')" class="w-full text-left bg-slate-950 hover:bg-slate-800 p-4 rounded-xl border border-slate-800 text-xs font-bold text-slate-200 transition flex items-center justify-between">
+                                        <span><i class="fa-solid fa-user-gear text-amber-400 mr-2 text-sm"></i> Oficina Virtual Socio</span>
+                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-slate-800 text-center">
+                                <span class="text-[11px] text-slate-500 font-medium">Sistema Multinivel V6 Optimizado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. BACK-OFFICE SOCIO -->
+                <div id="vista-backoffice" class="hidden space-y-8">
+                    <div class="border-b border-slate-800/80 pb-6">
+                        <h2 class="text-3xl font-extrabold text-white tracking-tight">Back-Office del Distribuidor</h2>
+                        <p class="text-sm text-slate-400 mt-1">Control operativo de membresía, enlaces de patrocinio y reportes personales.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl space-y-6">
+                            <h3 class="font-bold text-xl text-emerald-400 border-b border-slate-800 pb-3">Credenciales de Patrocinio</h3>
+                            <div>
+                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">URL de Registro Directo</label>
+                                <div class="flex mt-2">
+                                    <input type="text" readonly value="https://abjmnetworkers.com/ref/angelbrena" class="w-full bg-slate-950 border border-slate-800 rounded-l-xl px-4 py-3 text-sm text-slate-200 outline-none">
+                                    <button onclick="alert('Enlace copiado correctamente al portapapeles')" class="bg-emerald-600 hover:bg-emerald-500 px-5 rounded-r-xl text-white font-bold text-sm transition"><i class="fa-solid fa-copy"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Rango Comercial Actual</label>
+                                <input type="text" readonly value="Diamante Ejecutivo V6 (Oficina Principal)" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-emerald-400 font-bold mt-2 outline-none">
+                            </div>
+                        </div>
+
+                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl space-y-6">
+                            <h3 class="font-bold text-xl text-blue-400 border-b border-slate-800 pb-3">Estado de Calificación Mensual</h3>
+                            <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 space-y-4">
+                                <div class="flex justify-between items-center text-sm"><span class="text-slate-400">Consumo Personal Activo:</span> <strong class="text-emerald-400 font-bold">200 PTS (Calificado)</strong></div>
+                                <div class="flex justify-between items-center text-sm"><span class="text-slate-400">Líneas Frontales Activas:</span> <strong class="text-white font-bold">3 Frontales</strong></div>
+                                <div class="flex justify-between items-center text-sm"><span class="text-slate-400">Ciclo Operativo:</span> <strong class="text-blue-400 font-bold">Octubre 2026</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. ÁRBOL Y MATRIZ -->
+                <div id="vista-arbol" class="hidden space-y-8">
+                    <div class="border-b border-slate-800/80 pb-6 flex justify-between items-center">
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-white tracking-tight">Estructura de Red y Matriz Forzada</h2>
+                            <p class="text-sm text-slate-400 mt-1">Visualizador jerárquico de profundidad con compresión dinámica y gestión de estados.</p>
+                        </div>
+                        <button onclick="alert('Actualizando árbol dinámico...')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow">
+                            <i class="fa-solid fa-user-plus mr-2"></i>Afiliar Nuevo Socio
                         </button>
                     </div>
 
-                    <!-- Tarjetas de Estadísticas -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                        <div class="bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative overflow-hidden group hover:border-emerald-500/50 transition">
-                            <div class="absolute right-4 top-4 text-emerald-500/10 text-4xl group-hover:text-emerald-500/20 transition"><i class="fa-solid fa-users"></i></div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Total Afiliados Red</span>
-                            <div class="text-3xl font-extrabold text-white mt-2">1,480</div>
-                            <span class="text-xs text-emerald-400 font-medium mt-2 inline-flex items-center"><i class="fa-solid fa-arrow-up mr-1"></i>+12.4% este mes</span>
-                        </div>
-                        <div class="bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative overflow-hidden group hover:border-emerald-500/50 transition">
-                            <div class="absolute right-4 top-4 text-blue-500/10 text-4xl group-hover:text-blue-500/20 transition"><i class="fa-solid fa-chart-line"></i></div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Volumen Grupal (PTS)</span>
-                            <div class="text-3xl font-extrabold text-white mt-2">48,250</div>
-                            <span class="text-xs text-blue-400 font-medium mt-2 inline-flex items-center"><i class="fa-solid fa-shield-halved mr-1"></i>Rango Calificado</span>
-                        </div>
-                        <div class="bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative overflow-hidden group hover:border-emerald-500/50 transition">
-                            <div class="absolute right-4 top-4 text-amber-500/10 text-4xl group-hover:text-amber-500/20 transition"><i class="fa-solid fa-wallet"></i></div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Regalías del Ciclo</span>
-                            <div class="text-3xl font-extrabold text-white mt-2">$6,420.00</div>
-                            <span class="text-xs text-amber-400 font-medium mt-2 inline-flex items-center"><i class="fa-solid fa-clock mr-1"></i>Próximo pago: Viernes</span>
-                        </div>
-                        <div class="bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl relative overflow-hidden group hover:border-emerald-500/50 transition">
-                            <div class="absolute right-4 top-4 text-teal-500/10 text-4xl group-hover:text-teal-500/20 transition"><i class="fa-solid fa-box"></i></div>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Stock Activo Línea</span>
-                            <div class="text-3xl font-extrabold text-white mt-2">98.2%</div>
-                            <span class="text-xs text-teal-400 font-medium mt-2 inline-flex items-center"><i class="fa-solid fa-check mr-1"></i>Inventario óptimo</span>
-                        </div>
-                    </div>
-
-                    <!-- Sección de Acceso Rápido y Actividad -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <div class="lg:col-span-2 bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl">
-                            <h3 class="font-bold text-lg text-white mb-4">Estructura de Ingresos por Niveles Unilevel</h3>
-                            <div class="space-y-4">
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1"><span class="text-slate-300 font-medium">Nivel 1 (Directos - 10%)</span> <span class="text-emerald-400 font-bold">$2,850.00</span></div>
-                                    <div class="w-full bg-slate-900 h-2.5 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full rounded-full" style="width: 75%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1"><span class="text-slate-300 font-medium">Nivel 2 (Duplicación - 8%)</span> <span class="text-blue-400 font-bold">$2,140.00</span></div>
-                                    <div class="w-full bg-slate-900 h-2.5 rounded-full overflow-hidden"><div class="bg-blue-500 h-full rounded-full" style="width: 55%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between text-sm mb-1"><span class="text-slate-300 font-medium">Nivel 3 (Expansión - 5%)</span> <span class="text-purple-400 font-bold">$1,430.00</span></div>
-                                    <div class="w-full bg-slate-900 h-2.5 rounded-full overflow-hidden"><div class="bg-purple-500 h-full rounded-full" style="width: 35%"></div></div>
-                                </div>
-                            </div>
+                    <div class="bg-[#09101D] border border-slate-800/80 p-10 rounded-2xl shadow-xl flex flex-col items-center justify-center min-h-[500px]">
+                        <!-- Nodo Raíz -->
+                        <div class="bg-slate-950 border-2 border-emerald-500 p-6 rounded-2xl text-center w-80 shadow-2xl relative">
+                            <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-[10px] bg-emerald-500 text-slate-950 font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider">Raíz / Diamante</span>
+                            <h4 class="font-extrabold text-white text-lg mt-2">Ángel M. Breña E.</h4>
+                            <p class="text-xs text-slate-400 mt-1">Volumen Grupal: <strong class="text-emerald-400">64,500 PTS</strong></p>
                         </div>
 
-                        <div class="bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-bold text-lg text-white mb-3">Acciones Rápidas</h3>
-                                <div class="space-y-2.5">
-                                    <button onclick="navegar('productos')" class="w-full text-left bg-slate-900/80 hover:bg-slate-800 p-3 rounded-xl border border-slate-800 text-xs font-semibold text-slate-200 transition flex items-center justify-between">
-                                        <span><i class="fa-solid fa-tag mr-2 text-emerald-400"></i> Actualizar Precios y Kits</span>
-                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
-                                    </button>
-                                    <button onclick="navegar('arbol')" class="w-full text-left bg-slate-900/80 hover:bg-slate-800 p-3 rounded-xl border border-slate-800 text-xs font-semibold text-slate-200 transition flex items-center justify-between">
-                                        <span><i class="fa-solid fa-sitemap mr-2 text-blue-400"></i> Ver Árbol de Afiliados</span>
-                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
-                                    </button>
-                                    <button onclick="navegar('regalias')" class="w-full text-left bg-slate-900/80 hover:bg-slate-800 p-3 rounded-xl border border-slate-800 text-xs font-semibold text-slate-200 transition flex items-center justify-between">
-                                        <span><i class="fa-solid fa-calculator mr-2 text-amber-400"></i> Simular Comisiones</span>
-                                        <i class="fa-solid fa-chevron-right text-slate-500"></i>
-                                    </button>
-                                </div>
+                        <div class="w-px h-12 bg-slate-700 my-3"></div>
+
+                        <!-- Ramas Nivel 1 -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
+                            <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl text-center hover:border-emerald-500 transition shadow">
+                                <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2.5 py-1 rounded-md">ACTIVO - LÍNEA 1</span>
+                                <h5 class="font-bold text-white text-sm mt-3">Carlos Ruiz (Líder Norte)</h5>
+                                <p class="text-xs text-slate-400 mt-1">Volumen: 18,200 Pts</p>
                             </div>
-                            <div class="mt-4 pt-4 border-t border-slate-800/60 text-center">
-                                <span class="text-[11px] text-slate-500">Versión V6 Oficial - Arquitectura Robusta</span>
+                            <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl text-center hover:border-emerald-500 transition shadow">
+                                <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2.5 py-1 rounded-md">ACTIVO - LÍNEA 2</span>
+                                <h5 class="font-bold text-white text-sm mt-3">María López (Líder Centro)</h5>
+                                <p class="text-xs text-slate-400 mt-1">Volumen: 24,100 Pts</p>
+                            </div>
+                            <div class="bg-slate-950 border border-slate-800 p-5 rounded-xl text-center hover:border-rose-500/50 transition shadow">
+                                <span class="text-[10px] bg-rose-500/20 text-rose-400 font-bold px-2.5 py-1 rounded-md">INACTIVO - LÍNEA 3</span>
+                                <h5 class="font-bold text-white text-sm mt-3">Jorge Mendoza</h5>
+                                <p class="text-xs text-slate-400 mt-1">Compresión Dinámica</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SECCIÓN 2: BACK-OFFICE -->
-                <div id="sec-backoffice" class="hidden space-y-6">
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-white tracking-tight">Back-Office del Socio</h2>
-                        <p class="text-sm text-slate-400 mt-1">Gestión administrativa y control operativo de la cuenta de distribuidor.</p>
-                    </div>
-                    <div class="bg-[#0E1525] border border-slate-800/80 p-8 rounded-2xl shadow-xl grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <h3 class="font-bold text-lg text-emerald-400 border-b border-slate-800 pb-2">Información de Patrocinio</h3>
-                            <div>
-                                <label class="text-xs text-slate-400 font-semibold">Enlace de Afiliación Directo</label>
-                                <div class="flex mt-1">
-                                    <input type="text" readonly value="https://abjmnetworkers.com/ref/angelbrena" class="w-full bg-slate-900 border border-slate-800 rounded-l-xl px-4 py-2 text-sm text-slate-200 outline-none">
-                                    <button onclick="alert('Enlace copiado al portapapeles')" class="bg-emerald-600 hover:bg-emerald-500 px-4 rounded-r-xl text-white font-bold text-sm"><i class="fa-solid fa-copy"></i></button>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-xs text-slate-400 font-semibold">Rango Comercial Actual</label>
-                                <input type="text" readonly value="Diamante Ejecutivo V6" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-emerald-400 font-bold mt-1 outline-none">
-                            </div>
+                <!-- 4. PRODUCTOS Y PRECIOS EDITABLES -->
+                <div id="vista-productos" class="hidden space-y-8">
+                    <div class="border-b border-slate-800/80 pb-6 flex justify-between items-center">
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-white tracking-tight">Catálogo y Precios de Venta</h2>
+                            <p class="text-sm text-slate-400 mt-1">Modifica los precios públicos, costos de membresía y puntos de la línea de nutrición celular.</p>
                         </div>
-                        <div class="space-y-4">
-                            <h3 class="font-bold text-lg text-blue-400 border-b border-slate-800 pb-2">Estado de Calificación</h3>
-                            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-2">
-                                <div class="flex justify-between text-sm"><span class="text-slate-400">Consumo Personal:</span> <strong class="text-white">150 PTS (Calificado)</strong></div>
-                                <div class="flex justify-between text-sm"><span class="text-slate-400">Piernas Activas:</span> <strong class="text-emerald-400">3 Frontales</strong></div>
-                                <div class="flex justify-between text-sm"><span class="text-slate-400">Ciclo Actual:</span> <strong class="text-blue-400">Octubre 2026</strong></div>
-                            </div>
-                        </div>
+                        <button onclick="alert('¡Precios actualizados en todo el sistema!')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-5 py-2.5 rounded-xl transition shadow-lg">
+                            <i class="fa-solid fa-floppy-disk mr-2"></i>Guardar Precios
+                        </button>
                     </div>
-                </div>
 
-                <!-- SECCIÓN 3: ÁRBOL Y RED -->
-                <div id="sec-arbol" class="hidden space-y-6">
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-white tracking-tight">Estructura de Red y Matriz Unilevel</h2>
-                        <p class="text-sm text-slate-400 mt-1">Visualización jerárquica de la red de mercadeo con compresión dinámica.</p>
-                    </div>
-                    <div class="bg-[#0E1525] border border-slate-800/80 p-8 rounded-2xl shadow-xl flex flex-col items-center justify-center min-h-[450px]">
-                        <div class="bg-slate-900 border-2 border-emerald-500 p-5 rounded-2xl text-center w-72 shadow-2xl">
-                            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded">OFICINA PRINCIPAL</span>
-                            <h4 class="font-extrabold text-white text-base mt-2">Ángel M. Breña E.</h4>
-                            <p class="text-xs text-slate-400 mt-0.5">Volumen: 3,420 Pts</p>
-                        </div>
-                        <div class="w-px h-10 bg-slate-700 my-2"></div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
-                            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl text-center hover:border-emerald-500 transition cursor-pointer">
-                                <span class="text-[9px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded">ACTIVO N1</span>
-                                <h5 class="font-bold text-white text-sm mt-2">Línea Norte</h5>
-                                <p class="text-xs text-slate-400 mt-1">1,200 Pts</p>
-                            </div>
-                            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl text-center hover:border-emerald-500 transition cursor-pointer">
-                                <span class="text-[9px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded">ACTIVO N1</span>
-                                <h5 class="font-bold text-white text-sm mt-2">Línea Centro</h5>
-                                <p class="text-xs text-slate-400 mt-1">1,450 Pts</p>
-                            </div>
-                            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl text-center hover:border-rose-500/50 transition cursor-pointer">
-                                <span class="text-[9px] bg-rose-500/20 text-rose-400 font-bold px-2 py-0.5 rounded">INACTIVO N1</span>
-                                <h5 class="font-bold text-white text-sm mt-2">Línea Sur</h5>
-                                <p class="text-xs text-slate-400 mt-1">0 Pts</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECCIÓN 4: PRODUCTOS Y PRECIOS EDITABLES -->
-                <div id="sec-productos" class="hidden space-y-6">
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-white tracking-tight">Catálogo y Precios de Productos</h2>
-                        <p class="text-sm text-slate-400 mt-1">Gestión de precios de venta al público y puntos asignados por producto.</p>
-                    </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-3">
+                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-4">
                             <h3 class="font-bold text-white text-lg">Enercell / GNM-X</h3>
-                            <p class="text-xs text-slate-400">Nutrición celular avanzada Nrf2.</p>
-                            <div class="pt-2">
-                                <label class="text-[11px] text-slate-400">Precio Venta ($)</label>
-                                <input type="number" value="50" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-white mt-1 font-bold">
+                            <p class="text-xs text-slate-400">Activador celular avanzado Nrf2.</p>
+                            <div>
+                                <label class="text-[11px] font-bold text-slate-400">Precio Venta ($)</label>
+                                <input type="number" id="prod-1" value="50" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-white mt-1 font-bold">
                             </div>
                         </div>
-                        <div class="bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-3">
+                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-4">
                             <h3 class="font-bold text-white text-lg">Nopaloe RF03 / LINQ</h3>
                             <p class="text-xs text-slate-400">Regeneración y bienestar digestivo.</p>
-                            <div class="pt-2">
-                                <label class="text-[11px] text-slate-400">Precio Venta ($)</label>
-                                <input type="number" value="45" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-white mt-1 font-bold">
+                            <div>
+                                <label class="text-[11px] font-bold text-slate-400">Precio Venta ($)</label>
+                                <input type="number" id="prod-2" value="45" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-white mt-1 font-bold">
                             </div>
                         </div>
-                        <div class="bg-[#0E1525] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-3">
+                        <div class="bg-[#09101D] border border-slate-800/80 p-6 rounded-2xl shadow-xl space-y-4">
                             <h3 class="font-bold text-white text-lg">Moringa Hiperanthera</h3>
                             <p class="text-xs text-slate-400">Superalimento y antioxidante puro.</p>
-                            <div class="pt-2">
-                                <label class="text-[11px] text-slate-400">Precio Venta ($)</label>
-                                <input type="number" value="40" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-white mt-1 font-bold">
+                            <div>
+                                <label class="text-[11px] font-bold text-slate-400">Precio Venta ($)</label>
+                                <input type="number" id="prod-3" value="40" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-white mt-1 font-bold">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SECCIÓN 5: CÁLCULO DE REGALÍAS -->
-                <div id="sec-regalias" class="hidden space-y-6">
-                    <div>
+                <!-- 5. SIMULADOR DE REGALÍAS -->
+                <div id="vista-regalias" class="hidden space-y-8">
+                    <div class="border-b border-slate-800/80 pb-6">
                         <h2 class="text-3xl font-extrabold text-white tracking-tight">Simulador de Regalías Unilevel</h2>
-                        <p class="text-sm text-slate-400 mt-1">Cálculo matricial automático basado en la red de profundidad.</p>
+                        <p class="text-sm text-slate-400 mt-1">Cálculo matricial en tiempo real basado en la cantidad de socios y volumen de consumo.</p>
                     </div>
-                    <div class="bg-[#0E1525] border border-slate-800/80 p-8 rounded-2xl shadow-xl grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="space-y-4">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl space-y-6">
                             <div>
-                                <label class="text-xs text-slate-400 font-semibold">Socios Activos Nivel 1</label>
-                                <input type="number" id="sim-n1" value="5" oninput="calcular()" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-white mt-1">
+                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Socios Activos Nivel 1</label>
+                                <input type="number" id="sim-n1" value="5" oninput="calcularRegalias()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white mt-2 font-bold outline-none">
                             </div>
                             <div>
-                                <label class="text-xs text-slate-400 font-semibold">Socios en Nivel 2</label>
-                                <input type="number" id="sim-n2" value="15" oninput="calcular()" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-white mt-1">
+                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Socios en Nivel 2 (Duplicación)</label>
+                                <input type="number" id="sim-n2" value="15" oninput="calcularRegalias()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white mt-2 font-bold outline-none">
                             </div>
                             <div>
-                                <label class="text-xs text-slate-400 font-semibold">Consumo Promedio ($)</label>
-                                <input type="number" id="sim-consumo" value="50" oninput="calcular()" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-white mt-1">
+                                <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Consumo Promedio por Socio ($)</label>
+                                <input type="number" id="sim-consumo" value="50" oninput="calcularRegalias()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white mt-2 font-bold outline-none">
                             </div>
                         </div>
-                        <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
+
+                        <div class="bg-[#09101D] border border-slate-800/80 p-8 rounded-2xl shadow-xl flex flex-col justify-between">
                             <div>
-                                <h3 class="font-bold text-lg text-emerald-400 mb-2">Proyección de Ganancias</h3>
-                                <div class="text-4xl font-extrabold text-white mt-4" id="res-total">$85.00</div>
-                                <p class="text-xs text-slate-400 mt-2">Calculado con un 10% para Nivel 1 y 8% para Nivel 2.</p>
+                                <h3 class="font-bold text-xl text-emerald-400 mb-4">Proyección de Ganancias Generadas</h3>
+                                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                                    <span class="text-xs text-slate-400 uppercase font-bold">Total Regalías Estimadas Ciclo</span>
+                                    <div id="res-total" class="text-5xl font-extrabold text-emerald-400 mt-2">$85.00</div>
+                                </div>
                             </div>
-                            <button onclick="alert('Simulación guardada con éxito')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition mt-6">Guardar Simulación</button>
+                            <button onclick="alert('Proyección guardada en el sistema')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl transition shadow-lg mt-6">Confirmar Proyección</button>
                         </div>
                     </div>
                 </div>
@@ -309,27 +374,45 @@
         </main>
     </div>
 
-    <!-- Script de Navegación y Simulador -->
+    <!-- Script de Control Interactivo Masivo -->
     <script>
-        function navegar(seccion) {
-            const secs = ['dashboard', 'backoffice', 'arbol', 'productos', 'regalias'];
-            secs.forEach(s => {
-                document.getElementById('sec-' + s).classList.add('hidden');
-                const btn = document.getElementById('nav-' + s);
-                if(btn) btn.className = "w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 font-medium text-sm transition";
+        function conmutarVista(vistaId) {
+            const vistas = ['dashboard', 'backoffice', 'arbol', 'productos', 'regalias'];
+            vistas.forEach(v => {
+                document.getElementById('vista-' + v).classList.add('hidden');
+                const btn = document.getElementById('btn-' + v);
+                if(btn) {
+                    btn.className = "w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-slate-400 hover:bg-slate-800/50 hover:text-white font-semibold text-sm transition";
+                }
             });
-            document.getElementById('sec-' + seccion).classList.remove('hidden');
-            const activeBtn = document.getElementById('nav-' + seccion);
-            if(activeBtn) activeBtn.className = "w-full flex items-center space-x-3 px-4 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-sm transition shadow-lg shadow-emerald-900/20";
+            document.getElementById('vista-' + vistaId).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + vistaId);
+            if(activeBtn) {
+                activeBtn.className = "w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl bg-emerald-600 text-white font-bold text-sm transition shadow-lg shadow-emerald-900/30";
+            }
+
+            // Actualizar breadcrumb
+            const nombres = {
+                'dashboard': 'Dashboard Ejecutivo',
+                'backoffice': 'Back-Office Socio',
+                'arbol': 'Árbol & Matriz Forzada',
+                'productos': 'Precios & Catálogo',
+                'regalias': 'Simulador de Regalías'
+            };
+            document.getElementById('titulo-bread').innerText = nombres[vistaId];
         }
 
-        function calcular() {
+        function calcularRegalias() {
             const n1 = parseFloat(document.getElementById('sim-n1').value) || 0;
             const n2 = parseFloat(document.getElementById('sim-n2').value) || 0;
             const consumo = parseFloat(document.getElementById('sim-consumo').value) || 0;
             const total = (n1 * consumo * 0.10) + (n2 * consumo * 0.08);
             document.getElementById('res-total').innerText = '$' + total.toFixed(2);
         }
+
+        window.onload = function() {
+            calcularRegalias();
+        };
     </script>
 </body>
 </html>
